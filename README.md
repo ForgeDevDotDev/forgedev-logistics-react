@@ -1,6 +1,6 @@
-# ForgeDev Logistics (React)
+# ForgeDev Logistics React
 
-> Delivery tracking + dispatch dashboard — React/Next.js frontend
+> React + Vite + TypeScript + Zustand frontend for delivery tracking and dispatch dashboard
 
 **Part of [ForgeDev](https://forgedev.dev)** — Structured work simulation for junior developers.
 
@@ -30,7 +30,63 @@ Contributions are welcome! Please read:
 
 ## 🏗 Project Structure
 
-> TODO: Document the project structure once the codebase is built.
+```
+forgedev-logistics-react/
+├── src/
+│   ├── api/
+│   │   └── index.ts          # API client + endpoint modules
+│   ├── assets/
+│   │   └── main.css          # Global styles
+│   ├── components/
+│   │   ├── OrderCard.tsx
+│   │   ├── CourierCard.tsx
+│   │   ├── StatusBadge.tsx
+│   │   ├── TrackingTimeline.tsx
+│   │   ├── AssignCourierForm.tsx
+│   │   └── RouteMap.tsx       # Map placeholder
+│   ├── pages/
+│   │   ├── DispatchDashboard.tsx
+│   │   ├── CourierView.tsx
+│   │   ├── TrackingView.tsx
+│   │   ├── OrderDetail.tsx
+│   │   └── CustomerList.tsx
+│   ├── stores/
+│   │   ├── orders.ts
+│   │   ├── couriers.ts
+│   │   ├── deliveries.ts
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── .env.example
+```
+
+---
+
+## 🚀 Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+The app runs on `http://localhost:5173` and proxies `/api` to `http://localhost:3000`.
+
+Start the backend first: [forgedev-logistics-backend](../forgedev-logistics-backend)
+
+---
+
+## 🗺️ Features
+
+- **Dispatch Dashboard** — View all orders and available couriers, assign couriers to orders
+- **Courier View** — See assigned deliveries and update delivery status
+- **Tracking** — Public order tracking by tracking code
+- **Order Detail** — Full order info with status history timeline
+- **Customer List** — View customers extracted from orders
 
 ---
 
@@ -44,8 +100,7 @@ Contributions are welcome! Please read:
 
 ## 📁 Related Repositories
 
-Part of the **Logistics** domain. This frontend connects to:
-
-| Repo | Role |
+| Repo | Type |
 |------|------|
 | forgedev-logistics-backend | Backend API |
+| forgedev-logistics-vue | Vue Frontend |
